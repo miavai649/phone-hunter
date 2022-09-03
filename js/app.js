@@ -94,6 +94,14 @@ const displayPhoneDetail = phone =>{
   console.log(phone);
   const modalTitle = document.getElementById('phoneDetailModalLabel')
   modalTitle.innerText = phone.name;
+  const phoneDetails = document.getElementById('phone-details');
+  phoneDetails.innerHTML = `
+    <p>Resealse Date: ${phone.releaseDate ? phone.releaseDate : 'no release date'}</p>
+    <p>Chip Set: ${phone.mainFeatures ? phone.mainFeatures.chipSet : 'no more chip set details'}</p>
+    <p>Storage: ${phone.mainFeatures ? phone.mainFeatures.storage : 'no more details'}</p>
+    <p>Display: ${phone.mainFeatures ? phone.mainFeatures.displaySize : 'no more display information'}</p>
+  `
 }
 
-loadPhone('apple');
+// loadPhone('apple');
+
